@@ -15,7 +15,7 @@ RUN mkdir -p /usr/local/share/bettercap
 RUN git clone https://github.com/bettercap/caplets /usr/local/share/bettercap/caplets
 
 # final stage
-FROM alpine:3.15
+FROM alpine:3.16
 RUN apk add --no-cache ca-certificates
 RUN apk add --no-cache bash iproute2 libpcap libusb-dev libnetfilter_queue wireless-tools
 COPY --from=build-env /go/src/github.com/bettercap/bettercap/bettercap /app/
